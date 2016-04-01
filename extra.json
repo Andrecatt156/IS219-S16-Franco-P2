@@ -1,3 +1,35 @@
 {
-    "name": "AndreCatt156"
+    "images": [
+
+
+        {
+            "imgPath": "img/dogs/blackLab.jpg",
+
+            "description": "Black Lab",
+
+        },
+        {
+            "imgPath": "img/dogs/boxer.jpg",
+
+            "description": "Boxer",
+
+        },
+        {
+            "imgPath": "img/dogs/chow.jpg",
+
+            "description": "Chow Chow",
+
+        },
+        {
+            "imgPath": "img/dogs/golden.jpg",
+
+            "description": "Golden Retriever",
+
+        },
+        {
+            "imgPath": "img/dogs/husky.jpg",
+
+            "description": "Husky",
+
+        }
 }

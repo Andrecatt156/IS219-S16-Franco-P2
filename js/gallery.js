@@ -32,7 +32,10 @@ function animate() {
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
+
+
 //Andres Franco
+///////////////////////////////////////////////////////////////////////////////
 function swapPhoto() 
 {
     if (mCurrentIndex > mImages.length - 1) 
@@ -45,7 +48,7 @@ function swapPhoto()
 
     }
     
-    //adds description
+    //description
     $('#slideShow .photoHolder img').attr('src', mImages[mCurrentIndex].imgPath);
     $('#slideShow .details .location').text("Location: " + mImages[mCurrentIndex].location);
     $('#slideShow .details .description ').text("Description: " + mImages[mCurrentIndex].description);
@@ -55,24 +58,21 @@ function swapPhoto()
 }      
 
 
-function getQueryParm(qs) 
+function getQueryParm(pa) 
 {
-    qs = qs.split("+").join(" ");
+    pa = pa.split("+").join(" ");
     var parm = {},
-            tokens,
-            re = /[?&]?([^=]+)=([^&]*)/g;
-    while (tokens = re.exec(qs)) 
+        tokens,
+        sig = /[?&]?([^=]+)=([^&]*)/g;
+    while (tokens = sig.exec(pa)) 
     {
         parm[decodeURIComponent(tokens[1])]
-                = decodeURIComponent(tokens[2]);
+             = decodeURIComponent(tokens[2]);
     }
     return parm;
 }
 var $_GET = getQueryParm(document.location.search);
-
-
-
-
+///////////////////////////////////////////////////////////////////////////////
 // Counter for the mImages array
 var mCurrentIndex = 1;
 
@@ -88,15 +88,13 @@ var mJson;
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 
-var mUrl ;
-
-if ($_GET["json"] === "extra.json") 
+if ($_GET["json"] === "extra.json")
 {
-    mUrl = "extra.json";
+    var mUrl = "extra.json";
 } 
 else 
 {
-    mUrl = "images.json";
+    var mUrl = "images.json";
 }
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
@@ -157,7 +155,7 @@ function GalleryImage(imgPath, location, description, date)
 
 }
 
-function reqListener() 
+function reListener() 
 {
     console.log(JSON.parse(this.responseText));
     var mJson = JSON.parse(this.responseText);
@@ -165,10 +163,11 @@ function reqListener()
     {
         var now = mJson.images[i];
         var imageDesc = new GalleryImage(now.imgPath, now.location, now.description, now.date);
+        
         mImages.push(imageDesc);
 
     }
 }
-mRequest.addEventListener("load", reqListener);
+mRequest.addEventListener("load", reListener);
 mRequest.open("GET", mUrl);
 mRequest.send();

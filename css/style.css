@@ -66,9 +66,24 @@ body {
 	
 	height: 42px;
 	width: 42px;
-	right: 0px;
-
+	right: 0px;   
 }
+
+
+
+
+
+#nextPhoto:hover {
+	opacity:0.8;
+}
+
+#prevPhoto:hover {
+	opacity:0.8;
+}
+
+
+
+
 
 .details p {
 
