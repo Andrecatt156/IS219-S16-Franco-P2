@@ -32,9 +32,7 @@ function animate() {
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
-
-
-
+//Andres Franco
 function swapPhoto() 
 {
     if (mCurrentIndex > mImages.length - 1) 
@@ -52,7 +50,6 @@ function swapPhoto()
     $('#slideShow .details .location').text("Location: " + mImages[mCurrentIndex].location);
     $('#slideShow .details .description ').text("Description: " + mImages[mCurrentIndex].description);
     $('#slideShow .details .date ').text("Date: " + mImages[mCurrentIndex].date);
-
     console.log('photo changed');
     mCurrentIndex++;
 }      
@@ -104,7 +101,8 @@ else
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
 function makeGalleryImageOnloadCallback(galleryImage) {
-	return function(e) {
+	return function(e) 
+            {
 		galleryImage.img = e.target;
 		mImages.push(galleryImage);
             };
@@ -113,10 +111,7 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 $(document).ready( function() 
 
 {
-	
-
-    $('.details').eq(0).hide();
-        
+    $('.details').eq(0).hide();       
     $("img.moreIndicator").click(function ()
     {
         if ($(this).hasClass("rot90")) 
@@ -127,18 +122,16 @@ $(document).ready( function()
         else 
             {
                 $(this).removeClass("rot270").addClass("rot90");
-                $("div.details").fadeToggle("slow", "linear");
+                $("div.details").fadeToggle("fast", "linear");
             }
         
     });
 
     $("#nextPhoto").css({"position": "absolute", "right": "0"});
-
     $("#nextPhoto").click(function () 
     {
         swapPhoto()
     });
-
     $("#prevPhoto").click(function () 
     {
         mCurrentIndex = mCurrentIndex - 2;
