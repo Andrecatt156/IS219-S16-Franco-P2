@@ -90,7 +90,7 @@ var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-<<<<<<< HEAD
+
 var mUrl ;
 
 if ($_GET["json"] === "extra.json") 
@@ -101,11 +101,6 @@ else
 {
     mUrl = "images.json";
 }
-=======
-var mUrl = '/js/images.json';
-
->>>>>>> origin/master
-
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
 function makeGalleryImageOnloadCallback(galleryImage) {
@@ -159,7 +154,6 @@ window.addEventListener('load', function() {
 
 }, false);
 
-<<<<<<< HEAD
 function GalleryImage(imgPath, location, description, date) 
 {
     
@@ -185,24 +179,3 @@ function reqListener()
 mRequest.addEventListener("load", reqListener);
 mRequest.open("GET", mUrl);
 mRequest.send();
-=======
-function GalleryImage() {
-
-	var imgData = {
-		location:'',
-		description:'',
-		date:'',
-		img:''
-	};
-	
-  };
-
-
-
-	//implement me as an object to hold the following data about an image:
-	//1. location where photo was taken
-	//2. description of photo
-	//3. the date when the photo was taken
-	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
-}
->>>>>>> origin/master
